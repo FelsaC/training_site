@@ -3,15 +3,96 @@
     margin: 0;
 }
 
-main {
-    max-width: 500px;
-    margin: auto;
+h1 {
+    color: var(--color2);
 }
 
-.form_container {
-    margin-top: 50px;
+.form_container {  
+    max-width: 500px;
+    min-width: 50px;
+    min-height: calc(100vh - 329px);
+    height: 100% ;
+    margin: 40px auto;
+    padding: 20px;
+    /*background-color: var(--color4);*/
+    box-sizing: border-box;
+}
+
+.logo_container {
+    width: 150px;
+    margin: auto;
+    padding: 5px;
+    background-color: var(--color1);
+}
+
+.form_container label {
+    display: block;
+    font-size: 15px;
+    margin: 5px;
+    font-size: 20px;
+    color: var(--color2);
+}
+
+.input_container {
+    margin-bottom: 20px;
 }
 
 .form_container input{
+    box-sizing: border-box;
+    padding: 10px 25px;
     display: block;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid var(--color2);
+    background-color: var(--color3);
+    color: var(--color2);
+}
+
+.login_button {
+    width: 100%;
+    padding: 10px;
+
+    background-color: var(--color5);
+    color: var(--color3);
+
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+
+    transition: 0.5s background, 1s color, 0.5s transform;
+
+
+    cursor: pointer;
+}
+
+.login_button:hover {
+    background-color: var(--color1);
+    color: var(--color2);
+    transform: scale(1.05);
+}
+
+.error-message {
+    visibility: hidden;
+    color: var(--color5);
+}
+
+.invalid-input label {
+    color: var(--color5);
+}
+
+.invalid-input input {
+   border: 2px solid var(--color5); 
+   color: var(--color5);
+}
+
+.invalid-input .error-message {
+    visibility: visible;
+}
+
+.password-field {
+    padding: 5px;
+    margin-bottom: 10px;
+    color: var(--color2);
+    border-color: var(--color4);
 }

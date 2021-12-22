@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IframeLib</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/forms.css">
 </head>
@@ -13,31 +13,46 @@
         <h1>Registrar-se</h1>
     </header>
     <main class="form_container">
+        <div class="logo_container">
+            <h2 class="logo">IframeLib</h2>
+        </div>
         <form action="">
-            <label for="user">Usuário</label> 
-            <input name="user" type="name" required>
+            <div class="input_container">
+                <label for="user">Usuário</label> 
+                <input name="user" type="name" minlength="4"  maxlength="20" pattern="[\w\d]{4,20}" required data-form="user" placeholder="Obrigatório">
+                <spam class="error-message">Mensagem de erro</spam>
+            </div>
+            <div class="input_container">
+                <label for="email">Email</label> 
+                <input name="email" type="email" required placeholder="Obrigatório" data-form="email">
+                <spam class="error-message">Mensagem de erro</spam>
+            </div>
+            <div class="input_container">
+                <label for="phone">Telefone</label> 
+                <input name="phone" pattern="^[\d]{4,5}-?[\d]{4}$" type="text" placeholder="xxxxx-xxxx" data-form="phone">    
+                <spam class="error-message">Mensagem de erro</spam>
+            </div>
+            <fieldset class="password-field">
+                <legend>Senha</legend>
+                <div class="input_container">
+                    <label for="pass">Senha</label> 
+                    <input name="pass" type="password" pattern="[\w\d!@#$%&*\(\)]{6,20}" required data-form="pass" placeholder="Obrigatório">
+                    <spam class="error-message">Mensagem de erro</spam>
+                </div>
+                <div class="input_container">
+                    <label for="repass">Confirmar senha</label> 
+                    <input name="repass" type="password" required data-form="checkPass" placeholder="Obrigatório">
+                    <spam class="error-message">Mensagem de erro</spam>
+                </div>
+            </fieldset>
 
-            <label for="email">Email</label> 
-            <input name="email" type="email" required>
 
-            <label for="phone">Telefone</label> 
-            <input name="phone" type="text" required>      
-
-            <label for="cep">Cep</label> 
-            <input name="cep" type="text" required>
-
-            <label for="pass">Senha</label> 
-            <input name="pass" type="password" required>
-
-            <label for="repass">Repetir Senha</label> 
-            <input name="repass" type="password" required>
-
-            <button type="submit">Registrar-se</button>
+            <button type="submit" class="login_button">Registrar-se</button>
         </form>
     </main>
     <footer>
 
     </footer>
-    
+   <script type="module" src="../scripts/app.js"></script> 
 </body>
 </html>
